@@ -2,7 +2,7 @@
 
 This respository contains a Web Server Cluster module of a [Terraform](https://www.terraform.io/) config.
 
-It define a cluster of web servers module on AWS (Amazon Web Services) using EC2 and Auto Scaling, and a load balancer using ELB.
+It defines a cluster of web servers module on AWS (Amazon Web Services) using EC2 and Auto Scaling, and a load balancer using ELB.
 
 The cluster of web servers returns "Hello, World" for the URL `/`. The load balancer listens on port 80.
 
