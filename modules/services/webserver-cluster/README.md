@@ -1,27 +1,15 @@
-# Terraform Web Server Cluster module example
+# Terraform Web Server Cluster Module
 
-This folder contains a Web Server Cluster module example of a Terraform file [Terraform](https://www.terraform.io/).
+This respository contains a Web Server Cluster module of a [Terraform](https://www.terraform.io/) config.
 
-This Terraform file define a cluster of web servers module on AWS (Amazon Web Services) using EC2 and Auto Scaling, and a load balancer using ELB.
+It define a cluster of web servers module on AWS (Amazon Web Services) using EC2 and Auto Scaling, and a load balancer using ELB.
 
 The cluster of web servers returns "Hello, World" for the URL `/`. The load balancer listens on port 80.
 
-## Requirements
+Feel free to update the script for the ASG Launch Config based on your use cases.
 
-* You must have [Terraform](https://www.terraform.io/) installed on your computer.
-* You must have an [AWS (Amazon Web Services)](http://aws.amazon.com/) account.
-* It uses the Terraform AWS Provider that interacts with the many resources supported by AWS through its APIs.
-* This code was written for Terraform 0.10.x.
+## Prerequisites
 
-## Using the code
-
-Terraform modules are not meant to be deployed directly. Instead, you should be using them from other templates. Furthermore, this module is in a repo in order to be used by Terraform files from other repos.
-
-See:
-
-[https://github.com/alfonsof/terraform-examples-aws/tree/master/code/10-multi-repo-example](https://github.com/alfonsof/terraform-examples-aws/tree/master/code/10-multi-repo-example) 
-
-where this module is used by:
-
-* Terraform Web Server Cluster example (staging environment)
-* Terraform Web Server Cluster example (production environment)
+- You must have [Terraform](https://www.terraform.io/) installed on your computer.
+- AWS CLI v2
+- [AWS (Amazon Web Services)](http://aws.amazon.com/) account and its credentials set up for your AWS CLI.
