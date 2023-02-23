@@ -5,7 +5,7 @@ data "aws_availability_zones" "all" {}
 data "terraform_remote_state" "db" {
   backend = "s3"
 
-  config {
+  config = {
     bucket = var.db_remote_state_bucket
     key    = var.db_remote_state_key
     region = "us-east-1"
@@ -15,12 +15,6 @@ data "terraform_remote_state" "db" {
 # Data source: Template file
 data "template_file" "user_data" {
   template = file("${path.module}/user-data.sh")
-
-  vars {
-    server_port = var.server_port
-    db_address  = data.terraform_remote_state.db.address
-    db_port     = data.terraform_remote_state.db.port
-  }
 }
 
 # Create a Security Group for an EC2 instance
