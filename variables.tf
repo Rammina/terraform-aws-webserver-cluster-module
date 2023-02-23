@@ -21,6 +21,7 @@ variable "db_remote_state_key" {
 
 # Input variable: Instance type
 variable "instance_type" {
+  type        = string
   description = "The type of EC2 Instances to run (e.g. t2.micro)"
 }
 
