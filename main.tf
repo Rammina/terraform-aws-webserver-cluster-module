@@ -1,5 +1,7 @@
-# Data source: query the list of availability zones
-data "aws_availability_zones" "all" {}
+# Data source: query the list of AZs that are available
+data "aws_availability_zones" "available" {
+  state = "available"
+}
 
 # Data source: DB remote state
 data "terraform_remote_state" "db" {
@@ -80,7 +82,7 @@ resource "aws_launch_configuration" "example" {
 # Create an Autoscaling Group
 resource "aws_autoscaling_group" "example" {
   launch_configuration = aws_launch_configuration.example.id
-  availability_zones   = ["${data.aws_availability_zones.all.names}"]
+  availability_zones   = ["${data.aws_availability_zones.available.names}"]
   load_balancers       = ["${aws_elb.example.name}"]
   health_check_type    = "ELB"
 
